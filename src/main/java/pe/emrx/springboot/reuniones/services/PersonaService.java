@@ -1,6 +1,7 @@
 package pe.emrx.springboot.reuniones.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -19,4 +20,9 @@ public class PersonaService {
     public List<Persona> getAllPersonas() {
         return personaRepository.findAll();
     }
+
+    public Optional<Persona> getById(long id) {
+        return personaRepository.findById(id);
+    }
+    
 }
