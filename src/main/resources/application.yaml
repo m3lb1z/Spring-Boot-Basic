@@ -6,18 +6,18 @@ spring:
     activate:
       on-profile: dev
 server:
-  port:8081
+  port: 8081
 ---
 spring:
   config:
     activate:
       on-profile: test
 server:
-  port:8082
+  port: 8082
 ---
 spring:
   config:
     activate:
       on-profile: prod
 server:
-  port:9000
+  port: 9000
