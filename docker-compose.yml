@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  rabbitmq:
+    image: rabbitmq:3.8.9-management
+    container_name: rabbitmq
+    restart: always
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./enable_plugins:/etc/rabbitmq/enable_plugins:ro
+    ports:
+      - "15672:15672"
+      - "5672:5672"
