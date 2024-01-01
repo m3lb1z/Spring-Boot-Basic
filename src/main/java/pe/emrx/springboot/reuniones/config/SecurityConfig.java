@@ -17,8 +17,9 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests().requestMatchers("/api/*").hasRole("API_USER")
-                .and().authorizeHttpRequests().requestMatchers("/*").authenticated()
+        http.authorizeHttpRequests()
+                .requestMatchers("/api/*", "/api/rest/**").hasRole("API_USER")
+                .and().authorizeHttpRequests().requestMatchers("/*", "/actuator/**").authenticated()
                 .and().formLogin().loginPage("/login").permitAll()
                 .and().logout().permitAll();
 
